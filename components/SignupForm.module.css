@@ -1,0 +1,48 @@
+
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  
+  .inputGroup {
+    width: 100%;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: #0d1117;
+    color: #c9d1d9; /* Light color for the text */
+  }
+  
+  .input::placeholder {
+    color: #8b949e; /* Placeholder text color */
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: blue; /* Green color for the submit button */
+    color: white;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #2ea043; /* Darker green on hover */
+  }
+  
