@@ -8,6 +8,7 @@ const SignupForm = () => {
     linkedInProfile: "",
     email: "",
     experiences: [{ position: "", company: "", startDate: "", endDate: "" }],
+    agreedToTerms: false,
   });
 
   const handleChange = (e) => {
@@ -53,11 +54,21 @@ const SignupForm = () => {
       experiences: prevState.experiences.filter((_, expIndex) => expIndex !== index),
     }));
   };
+  const handleCheckboxChange = () => {
+    setFormState(prevState => ({
+      ...prevState,
+      agreedToTerms: !prevState.agreedToTerms,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formState)
+    if (!formState.agreedToTerms) {
+      alert("You must agree to the terms of service before submitting.");
+      return;
+    }
     try {
-      const response = await fetch("http://218.186.165.142:25565/add_profile/", {
+      const response = await fetch("https://api.point103.com/add_profile/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -218,8 +229,17 @@ const SignupForm = () => {
                         </div>
                       </React.Fragment>
                     ))}
-
+  <div className="text-left md:col-span-5">                  
+        <input
+          type="checkbox"
+          id="terms"
+          checked={formState.agreedToTerms}
+          onChange={handleCheckboxChange}
+        />
+        <label htmlFor="terms"> I have read and agree to the <a href="terms-of-service" className="underline">Terms and Conditions</a> and <a href="code-of-conduct" className="underline">Code of Conduct</a></label>
+    </div>
                     <div className="text-right md:col-span-5">
+
                       <div className="inline-flex items-end">
                         <Button
                           className="translate-y-[-1rem] animate-fade-in opacity-0"
