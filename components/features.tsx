@@ -3,14 +3,13 @@
 import classNames from "classnames";
 import { Container } from "./container";
 import { useInView } from "react-intersection-observer";
-
+import { HeroSubtitle } from "./hero";
 type FeaturesProps = {
   children: React.ReactNode;
-  color: string;
-  colorDark: string;
+
 };
 
-export const Features = ({ children, color, colorDark }: FeaturesProps) => {
+export const Features = ({ children }: FeaturesProps) => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: false });
 
   return (
@@ -22,12 +21,7 @@ export const Features = ({ children, color, colorDark }: FeaturesProps) => {
           "is-visible before:opacity-100 before:[transform:rotate(180deg)_scale(2)]",
         !inView && "before:rotate-180 before:opacity-40"
       )}
-      style={
-        {
-          "--feature-color": color,
-          "--feature-color-dark": colorDark,
-        } as React.CSSProperties
-      }
+    
     >
       <div className="mt-[12.8rem] mb-16 w-full md:mt-[25.2rem] md:mb-[12.8rem]">
         {children}
@@ -61,9 +55,7 @@ const MainFeature = ({
           <h2 className="text-gradient mb-11 translate-y-[40%] pt-[12rem] text-center text-6xl [transition:transform_1000ms_cubic-bezier(0.3,_1.17,_0.55,_0.99)_0s] md:pt-0 md:text-8xl [.is-visible_&]:translate-y-0">
             {title}
           </h2>
-          <div className="relative z-10 rounded-[14px] backdrop-blur-[6px] before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(rgba(255,_255,_255,_0.3),_rgba(255,_255,_255,_0)_120%)] before:p-[1px] before:[mask:linear-gradient(black,_black)_content-box_content-box,_linear-gradient(black,_black)] before:[mask-composite:xor] after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:bg-[rgba(255,_255,_255,_0.15)] after:[mask:linear-gradient(black,transparent)]">
-            <img src={image} className="h-auto w-full" />
-          </div>
+      
         </Container>
       </div>
       <Container className="w-[78rem] max-w-[90%] text-center">
@@ -104,28 +96,30 @@ const FeatureGrid = ({ features }: FeatureGridProps) => {
 
 type FeatureCardsProps = {
   features: {
-    image: string;
-    imageClassName: string;
+
     title: string;
-    text: string;
+    texts: string[];
   }[];
 };
 
 const FeatureCards = ({ features }: FeatureCardsProps) => {
   return (
     <Container>
-      <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-        {features.map(({ title, text, image, imageClassName }) => (
+      <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+        {features.map(({ title, texts,}) => (
           <div
             key={title}
-            className="relative aspect-[1.1/1] overflow-hidden rounded-[2.4rem] border border-transparent-white bg-[radial-gradient(ellipse_at_center,rgba(var(--feature-color),0.15),transparent)] py-6 px-8 before:pointer-events-none before:absolute before:inset-0 before:bg-glass-gradient md:rounded-[4.8rem] md:p-14"
+            className="relative md:aspect-[1.1/1] aspect-[1/1] overflow-hidden rounded-[2.4rem] border border-transparent-white bg-[radial-gradient(ellipse_at_center,rgba(var(--feature-color),0.15),transparent)] py-4 px-8 before:pointer-events-none before:absolute before:inset-0 before:bg-glass-gradient md:rounded-[4.8rem] md:p-14"
           >
             <h3 className="mb-2 text-2xl text-white">{title}</h3>
-            <p className="max-w-[31rem] text-md text-primary-text">{text}</p>
-            <img
-              className={classNames("absolute max-w-none", imageClassName)}
-              src={image}
-            />
+            <ul className="list-disc">
+            {texts.map((text, index) => <li key={index} className="text-md text-primary-text">
+              {text}
+            </li>) }
+     
+            </ul>
+          
+    
           </div>
         ))}
       </div>
