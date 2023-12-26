@@ -4,6 +4,8 @@ import classNames from "classnames";
 import { Container } from "./container";
 import { useInView } from "react-intersection-observer";
 import { HeroSubtitle } from "./hero";
+import { title } from "process";
+import { Button } from "./button";
 type FeaturesProps = {
   children: React.ReactNode;
 
@@ -127,6 +129,54 @@ const FeatureCards = ({ features }: FeatureCardsProps) => {
   );
 };
 
+type PricingCardsProps = {
+  features: {
+
+    title: string;
+    button_txt : string;
+    texts: string[];
+  }[];
+};
+
+const PricingCards = ({ features }: PricingCardsProps) => {
+  return (
+    <Container>
+
+    <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+        {features.map(({ title, texts,}) => (
+          <div
+            key={title}
+            className="relative md:aspect-[1.1/1] aspect-[1/1] overflow-hidden rounded-[2.4rem] border border-transparent-white bg-[radial-gradient(ellipse_at_center,rgba(var(--feature-color),0.15),transparent)] py-4 px-8 before:pointer-events-none before:absolute before:inset-0 before:bg-glass-gradient md:rounded-[4.8rem] md:p-14"
+          >
+            <div className="flex flex-col justify-center items-start">
+            <h3 className="mb-2 text-2xl text-white">{title}</h3>
+            <ul className=" text-left">
+            {texts.map((text, index) => <li key={index} className="text-md text-primary-text">
+              {text}
+            </li>) }
+     
+            </ul>
+
+                      {/* <Button>test</Button> */}
+
+              
+            </div>
+
+          
+
+          </div>
+        ))}
+        
+      </div>
+
+
+    </Container>
+
+  )
+}
+
+
 Features.Main = MainFeature;
 Features.Grid = FeatureGrid;
 Features.Cards = FeatureCards;
+Features.Pricing = PricingCards;
