@@ -5,6 +5,7 @@ import { ChevronIcon } from "../icons/chevron";
 import { CommandMenu } from "../command-menu";
 import { EnjoyIssueTracking } from "./enjoy-issue-tracking";
 import classNames from "classnames";
+import { Clients } from "./clients";
 export const HomepageHero = () => (
   <Hero>
     <Button
@@ -17,13 +18,15 @@ export const HomepageHero = () => (
       <Highlight>→</Highlight>
     </Button>
     <HeroTitle className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-    .103<br className="hidden md:block select-none" /> 
-    Trusted diligence partner
+    <br className="hidden md:block select-none" /> 
+Point103 is your trusted diligence partner for expert insights
     <br className="hidden md:block select-none" /> <br className="hidden md:block select-none" />
     </HeroTitle>
     <HeroSubtitle className="translate-y-[-8rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
-    End-to-end search platform to find 
-      <br className="hidden md:block" /> Companies, Competitors and Experts
+In-depth support for you to understand companies and market dynamics
+      <br className="hidden md:block" /> 
+      Built by those who understand diligence and talent search
+
 
     </HeroSubtitle>
     <Button
@@ -32,12 +35,12 @@ export const HomepageHero = () => (
       variant="primary"
       size="large"
     >
-      <span>Join us as a client</span>
+      <span>Client SignUp</span>
       <Highlight>
         <ChevronIcon />
       </Highlight>
     </Button>
-    <HeroImage/>
+    {/* <HeroImage/> */}
     <div
         className={classNames(
           "mask-radial-faded pointer-events-none relative z-[-1] my-[-12.8rem] h-[60rem] overflow-hidden",
@@ -47,6 +50,8 @@ export const HomepageHero = () => (
       >
       
       </div>
+
+      <Clients></Clients>
     <EnjoyIssueTracking/>
 {/* 
     <div className="flex items-center p-8 justify-center w-full">

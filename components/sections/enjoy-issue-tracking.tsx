@@ -16,30 +16,33 @@ export const EnjoyIssueTracking = () => {
       <Features.Main
         title={
           <>
-            Consult .103
+            The .103 Difference
             <br />
         
           </>
         }
         image="/issues.webp"
-        text="Your partner to meaningful insights."
+        text=""
       />
 
-      <Features.Cards
+      <Features.Pricing
         features={[
           {
          
-            title: "Investors",
-            texts: ["Deepen understanding of niche sectors.", "Sectoral trends and company insights" , "Competitive benchmarking" , "Industry key success factors"],
+            title: "",
+            button_txt : "",
+            texts: ["Dedicated teams trained to understand the requirements and rigor of your diligence"],
           },
           {
      
-            title: "Consultants",
-            texts: ["Market trends and key drivers" , "Market and subvertical sizing" , "Key players and competitive benchmark" , "Industry key success factors"],
+            title: "",
+            button_txt : "",
+            texts: ["100% Custom recruitment for every request"],
           },
           {
 
-            title: "Corporations",
+            title: "",
+            button_txt : "",
             texts: ["B2B customer conversations" , "Test new strategic initiatives" , "Understand a new market or adjacent industry" , "M&A targets and fit"],
           },
         ]}
