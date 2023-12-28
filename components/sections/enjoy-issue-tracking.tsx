@@ -43,7 +43,7 @@ export const EnjoyIssueTracking = () => {
 
             title: "",
             button_txt : "",
-            texts: ["B2B customer conversations" , "Test new strategic initiatives" , "Understand a new market or adjacent industry" , "M&A targets and fit"],
+            texts: ["Building end-to-end technology to turn your history of diligences into a long-term moat"],
           },
         ]}
       />

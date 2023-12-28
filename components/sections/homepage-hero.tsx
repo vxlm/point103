@@ -6,12 +6,13 @@ import { CommandMenu } from "../command-menu";
 import { EnjoyIssueTracking } from "./enjoy-issue-tracking";
 import classNames from "classnames";
 import { Clients } from "./clients";
+import { BuildMomentum } from "./build-momentum";
 export const HomepageHero = () => (
   <Hero>
     <Button
       className="translate-y-[-1rem] animate-fade-in opacity-0"
       href="/signup"
-      variant="secondary"
+      variant="primary"
       size="small"
     >
       <span>Join us as an expert today</span>{" "}
@@ -25,14 +26,13 @@ Point103 is your trusted diligence partner for expert insights
     <HeroSubtitle className="translate-y-[-8rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
 In-depth support for you to understand companies and market dynamics
       <br className="hidden md:block" /> 
-      Built by those who understand diligence and talent search
 
 
     </HeroSubtitle>
     <Button
       className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:600ms]"
       href="/"
-      variant="primary"
+      variant="secondary"
       size="large"
     >
       <span>Client SignUp</span>
@@ -52,7 +52,7 @@ In-depth support for you to understand companies and market dynamics
       </div>
 
       <Clients></Clients>
-    <EnjoyIssueTracking/>
+    <BuildMomentum/>
 {/* 
     <div className="flex items-center p-8 justify-center w-full">
     <div className="relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center  overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:max-w-[calc(66.66%-12px)] md:basis-[calc(66.66%-12px)] md:p-14">
