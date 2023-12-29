@@ -1,5 +1,7 @@
 "use client";
 
+
+import { BarChartBig, Search, UsersRound } from "lucide-react";
 import { Features } from "../features";
 import {
   AutomatedBacklogIcon,
@@ -9,6 +11,7 @@ import {
   ParentSubIcon,
   WorkflowsIcon,
 } from "../icons/features";
+import Empty from "../icons/empty";
 
 export const BuildMomentum = () => {
   return (
@@ -16,47 +19,34 @@ export const BuildMomentum = () => {
       <Features.Main
         title={
           <>
-            Build momentum
+            {/* Build momentum
             <br />
-            with Cycles
+            with Cycles */}
+            The .103 Difference:
           </>
         }
         image="/gong.webp"
         imageSize="large"
-        text="Cycles focus your team on what work should happen next. A healthy routine to maintain velocity and make meaningful progress."
+        text=""
       />
       <Features.Grid
         features={[
           {
-            icon: ParentSubIcon,
-            title: "Automatic tracking.",
-            text: "Any started issues are added to the current cycle.",
+            icon: Empty,
+            title: "Dedicated teams trained to understand the requirements and rigor of your diligence",
+            text: "",
           },
           {
-            icon: AutomatedBacklogIcon,
-            title: "Scheduled.",
-            text: "Unfinished work rolls over to the next cycle automatically.",
+            icon: Empty,
+            title: "100% Custom recruitment for every request",
+            text: "",
           },
           {
-            icon: WorkflowsIcon,
-            title: "Fully configurable.",
-            text: "Define start date, end date, duration, and more.",
+            icon: Empty,
+            title: "Building end-to-end technology to turn your history of diligences into a long-term moat",
+            text: "",
           },
-          {
-            icon: CustomViewsIcon,
-            title: "Predict delays.",
-            text: "Get warnings for at-risk cycles.",
-          },
-          {
-            icon: DiscussionIcon,
-            title: "Scope creep.",
-            text: "Understand which issues are added mid-cycle.",
-          },
-          {
-            icon: IssuesIcon,
-            title: "Be prepared.",
-            text: "Schedule work in advance with upcoming cycles.",
-          },
+      
         ]}
       />
     </Features>
